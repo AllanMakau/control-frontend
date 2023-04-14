@@ -34,6 +34,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SistemaListComponent } from './components/sistema/sistema-list/sistema-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { SistemaCreateComponent } from './components/sistema/sistema-create/sistema-create.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     HomeComponent,
     HeaderComponent,
     SistemaListComponent,
-    LoginComponent
+    LoginComponent,
+    SistemaCreateComponent
   ],
   imports: [
     BrowserModule,
