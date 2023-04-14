@@ -3,6 +3,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { Credenciais } from 'src/app/models/credenciais';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,28 +13,33 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit{
 
-constructor(private toast: ToastrService){}
+constructor(private toast: ToastrService, private auth: AuthService, private router:Router){}
 
 creds: Credenciais = {
-  email:'',
-  senha:'',
+  username:'',
+  password:'',
 }
 
-email = new FormControl(null,Validators.email)
-senha = new FormControl(null,Validators.minLength(3))
+username = new FormControl(null,Validators.email)
+password = new FormControl(null,Validators.minLength(3))
 
   ngOnInit(): void {
   } 
 
   validaCampos():boolean{
-    if(this.email.valid && this.email.valid){
-      return true;
-    }
-      return false;;
+      return this.username.valid && this.password.valid;
   }
 
   logar(){
-    this.toast.error("usuario ou senha inválidos", 'Login');
+    this.auth.autenticate(this.creds).subscribe(response => {
+      this.auth.sucessfulLogin(response.headers.get('Authorization').substring(7));
+      console.log('pegando token')
+      console.log(response.headers.get('Authorization').substring(7))
+      console.log('navegando para pagina sistemas')
+      this.router.navigate(['sistemas'])
+    }, () => {
+      this.toast.error('usuário ou senha invalidos')
+    })
   }
 
 }
