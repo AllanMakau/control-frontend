@@ -7,8 +7,7 @@ import { SistemaListComponent } from './components/sistema/sistema-list/sistema-
 
 const routes: Routes = [
   { 
-    path: 'login', component: LoginComponent
-  },
+    path: 'login', component: LoginComponent},
   { 
     path: '',
     component: NavComponent, children : [
