@@ -5,6 +5,7 @@ import { Credenciais } from 'src/app/models/credenciais';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { ErrorDefault } from 'src/app/models/error';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +24,8 @@ creds: Credenciais = {
 username = new FormControl(null,Validators.email)
 password = new FormControl(null,Validators.minLength(3))
 
+errorDefault: ErrorDefault;
+
   ngOnInit(): void {
   } 
 
@@ -33,12 +36,9 @@ password = new FormControl(null,Validators.minLength(3))
   logar(){
     this.auth.autenticate(this.creds).subscribe(response => {
       this.auth.sucessfulLogin(response.headers.get('Authorization').substring(7));
-      console.log('pegando token')
-      console.log(response.headers.get('Authorization').substring(7))
-      console.log('navegando para pagina sistemas')
       this.router.navigate(['sistemas'])
-    }, () => {
-      this.toast.error('usuário ou senha invalidos')
+    }, ex => {
+      this.toast.error(ex.error)
     })
   }
 
