@@ -4,6 +4,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
+import { SistemaCreateComponent } from './components/sistema/sistema-create/sistema-create.component';
 import { SistemaListComponent } from './components/sistema/sistema-list/sistema-list.component';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
     path: '',
     component: NavComponent, canActivate: [AuthGuard], children : [
       {path : 'home', component : HomeComponent},
-      {path : 'sistemas', component : SistemaListComponent}
+      {path : 'sistemas', component : SistemaListComponent},
+      {path : 'sistemas/novo', component : SistemaCreateComponent}
     ]
   }
 ];

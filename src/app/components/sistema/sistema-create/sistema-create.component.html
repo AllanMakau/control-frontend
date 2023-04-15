@@ -1,1 +1,36 @@
-<p>sistema-create works!</p>
+
+<div class="container mat-elevation-z8" >
+
+    <form class="form">
+        <h1 class="fullWidth">Cadastrar Sistema</h1>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput >
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Abreviação</mat-label>
+            <input matInput >
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+
+        <section class="example-section">
+            <mat-slide-toggle
+                class="example-margin"
+                color="primary"
+                [checked]="checked"
+                [disabled]="disabled">
+              Ativo
+            </mat-slide-toggle>
+          </section>
+
+          <button mat-stroked-button class="fullWidth" color="primary">Cadastrar</button>
+          <button mat-stroked-button class="fullWidth" color="accent">Voltar</button>
+
+    </form>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-sistema-create',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class SistemaCreateComponent {
 
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
 }
