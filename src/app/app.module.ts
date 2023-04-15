@@ -30,6 +30,7 @@ import { NavComponent } from './components/nav/nav.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 
 import { ToastrModule } from 'ngx-toastr';
+
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SistemaListComponent } from './components/sistema/sistema-list/sistema-list.component';
@@ -76,7 +77,8 @@ import { SistemaCreateComponent } from './components/sistema/sistema-create/sist
       timeOut:4000,
       closeButton:true,
       progressBar:true
-    })
+    }),
+    
 
   ],
   providers: [AuthInterceptorProvider],

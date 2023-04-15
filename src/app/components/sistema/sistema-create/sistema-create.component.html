@@ -6,31 +6,51 @@
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Nome</mat-label>
-            <input matInput >
+            <input 
+            [formControl]="nome"
+            [(ngModel)]="sistema.nome"
+            name="nome"
+            required
+            matInput >
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Abreviação</mat-label>
-            <input matInput >
+            <input 
+            [formControl]="abreviacao"
+            [(ngModel)]="sistema.abreviacao"
+            name="abreviacao"
+            required
+            matInput >
         </mat-form-field>
 
         <mat-form-field class="fullWidth">
             <mat-label>Descrição</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            <textarea matInput 
+            [formControl]="descricao"
+            [(ngModel)]="sistema.descricao"
+            name="descricao"
+            required
+            placeholder="Ex. It makes me feel..."></textarea>
           </mat-form-field>
 
-        <section class="example-section">
+        <section class="section">
             <mat-slide-toggle
-                class="example-margin"
+                class="margin"
                 color="primary"
                 [checked]="checked"
-                [disabled]="disabled">
+                [disabled]="disabled"
+                name="ativo"
+                [(ngModel)]="sistema.ativo">
               Ativo
             </mat-slide-toggle>
           </section>
+          
+          {{sistema | json}}
+  
 
-          <button mat-stroked-button class="fullWidth" color="primary">Cadastrar</button>
-          <button mat-stroked-button class="fullWidth" color="accent">Voltar</button>
+          <button mat-stroked-button (click)="create()" [disabled]="!validaCampos()" class="fullWidth" color="primary">Cadastrar</button>
+          <button mat-stroked-button routerLink="../" class="fullWidth" color="accent">Voltar</button>
 
     </form>
 </div>
