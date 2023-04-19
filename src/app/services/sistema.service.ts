@@ -26,4 +26,8 @@ export class SistemaService {
   update(sistema: Sistema):Observable<Sistema>  {
     return this.http.put<Sistema>(`${API_CONFIG.baseUrl}/system/${sistema.id}`,sistema);
   }
+
+  delete(id:any):Observable<Sistema>{
+    return  this.http.delete<Sistema>(`${API_CONFIG.baseUrl}/system/${id}`)
+  }
 }
