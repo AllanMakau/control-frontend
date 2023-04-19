@@ -12,21 +12,21 @@ export class DepartamentoService {
   constructor(private http:HttpClient) { }
 
   findById(id:any):Observable<Departamento>{
-    return  this.http.get<Departamento>(`${API_CONFIG.baseUrl}/system/${id}`)
+    return  this.http.get<Departamento>(`${API_CONFIG.baseUrl}/departament/${id}`)
   }
   findAll(): Observable<Departamento[]> {
-    return this.http.get<Departamento[]>(`${API_CONFIG.baseUrl}/system`);
+    return this.http.get<Departamento[]>(`${API_CONFIG.baseUrl}/departament`);
   }
 
   create(departamento: Departamento):Observable<Departamento>  {
-    return this.http.post<Departamento>(`${API_CONFIG.baseUrl}/system`,departamento);
+    return this.http.post<Departamento>(`${API_CONFIG.baseUrl}/departament`,departamento);
   }
 
   update(departamento: Departamento):Observable<Departamento>  {
-    return this.http.put<Departamento>(`${API_CONFIG.baseUrl}/system/${departamento.id}`,departamento);
+    return this.http.put<Departamento>(`${API_CONFIG.baseUrl}/departament/${departamento.id}`,departamento);
   }
 
   delete(id:any):Observable<Departamento>{
-    return  this.http.delete<Departamento>(`${API_CONFIG.baseUrl}/system/${id}`)
+    return  this.http.delete<Departamento>(`${API_CONFIG.baseUrl}/departament/${id}`)
   }
 }
