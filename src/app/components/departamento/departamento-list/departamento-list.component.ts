@@ -13,7 +13,7 @@ export class DepartamentoListComponent implements OnInit {
 
   ELEMENT_DATA: Departamento[] = []
 
-  displayedColumns: string[] = ['id', 'nome', 'descricao', 'abreviacao','status','acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'descricao','status','acoes'];
   dataSource = new MatTableDataSource<Departamento>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

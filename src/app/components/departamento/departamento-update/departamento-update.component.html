@@ -1,1 +1,43 @@
-<p>departamento-update works!</p>
+
+<div class="container mat-elevation-z8" >
+
+    <form class="form">
+        <h1 class="fullWidth">Atualizar Departamento</h1>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input 
+            [formControl]="nome"
+            [(ngModel)]="departamento.nome"
+            name="nome"
+            required
+            matInput >
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput 
+            [formControl]="descricao"
+            [(ngModel)]="departamento.descricao"
+            name="descricao"
+            required
+            placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+
+        <section class="section">
+            <mat-slide-toggle
+                class="margin"
+                color="primary"
+                [checked]="checked"
+                [disabled]="disabled"
+                name="ativo"
+                [(ngModel)]="departamento.ativo">
+              Ativo
+            </mat-slide-toggle>
+          </section>
+
+          <button mat-stroked-button (click)="update()" [disabled]="!validaCampos()" class="fullWidth" color="primary">Atualizar</button>
+          <button mat-stroked-button routerLink="../../" class="fullWidth" color="accent">Voltar</button>
+
+    </form>
+</div>
