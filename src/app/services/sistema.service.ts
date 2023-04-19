@@ -12,11 +12,18 @@ export class SistemaService {
   constructor(private http:HttpClient) { }
 
 
+  findById(id:any):Observable<Sistema>{
+    return  this.http.get<Sistema>(`${API_CONFIG.baseUrl}/system/${id}`)
+  }
   findAll(): Observable<Sistema[]> {
     return this.http.get<Sistema[]>(`${API_CONFIG.baseUrl}/system`);
   }
 
   create(sistema: Sistema):Observable<Sistema>  {
     return this.http.post<Sistema>(`${API_CONFIG.baseUrl}/system`,sistema);
+  }
+
+  update(sistema: Sistema):Observable<Sistema>  {
+    return this.http.put<Sistema>(`${API_CONFIG.baseUrl}/system/${sistema.id}`,sistema);
   }
 }

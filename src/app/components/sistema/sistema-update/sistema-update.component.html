@@ -1,0 +1,53 @@
+
+<div class="container mat-elevation-z8" >
+
+    <form class="form">
+        <h1 class="fullWidth">Atualizar Sistema</h1>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input 
+            [formControl]="nome"
+            [(ngModel)]="sistema.nome"
+            name="nome"
+            required
+            matInput >
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Abreviação</mat-label>
+            <input 
+            [formControl]="abreviacao"
+            [(ngModel)]="sistema.abreviacao"
+            name="abreviacao"
+            required
+            matInput >
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput 
+            [formControl]="descricao"
+            [(ngModel)]="sistema.descricao"
+            name="descricao"
+            required
+            placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+
+        <section class="section">
+            <mat-slide-toggle
+                class="margin"
+                color="primary"
+                [checked]="checked"
+                [disabled]="disabled"
+                name="ativo"
+                [(ngModel)]="sistema.ativo">
+              Ativo
+            </mat-slide-toggle>
+          </section>
+
+          <button mat-stroked-button (click)="update()" [disabled]="!validaCampos()" class="fullWidth" color="primary">Atualizar</button>
+          <button mat-stroked-button routerLink="../../" class="fullWidth" color="accent">Voltar</button>
+
+    </form>
+</div>

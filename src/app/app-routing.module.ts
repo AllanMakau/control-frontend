@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { SistemaCreateComponent } from './components/sistema/sistema-create/sistema-create.component';
 import { SistemaListComponent } from './components/sistema/sistema-list/sistema-list.component';
+import { SistemaUpdateComponent } from './components/sistema/sistema-update/sistema-update.component';
 
 const routes: Routes = [
   { 
@@ -15,7 +16,8 @@ const routes: Routes = [
     component: NavComponent, canActivate: [AuthGuard], children : [
       {path : 'home', component : HomeComponent},
       {path : 'sistemas', component : SistemaListComponent},
-      {path : 'sistemas/novo', component : SistemaCreateComponent}
+      {path : 'sistemas/novo', component : SistemaCreateComponent},
+      {path : 'sistemas/update/:id', component : SistemaUpdateComponent}
     ]
   }
 ];

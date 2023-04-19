@@ -37,6 +37,8 @@ import { SistemaListComponent } from './components/sistema/sistema-list/sistema-
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { SistemaCreateComponent } from './components/sistema/sistema-create/sistema-create.component';
+import { SistemaUpdateComponent } from './components/sistema/sistema-update/sistema-update.component';
+import { SistemaDeleteComponent } from './components/sistema/sistema-delete/sistema-delete.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { SistemaCreateComponent } from './components/sistema/sistema-create/sist
     HeaderComponent,
     SistemaListComponent,
     LoginComponent,
-    SistemaCreateComponent
+    SistemaCreateComponent,
+    SistemaUpdateComponent,
+    SistemaDeleteComponent
   ],
   imports: [
     BrowserModule,
