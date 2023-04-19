@@ -39,6 +39,10 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { SistemaCreateComponent } from './components/sistema/sistema-create/sistema-create.component';
 import { SistemaUpdateComponent } from './components/sistema/sistema-update/sistema-update.component';
 import { SistemaDeleteComponent } from './components/sistema/sistema-delete/sistema-delete.component';
+import { DepartamentoListComponent } from './components/departamento/departamento-list/departamento-list.component';
+import { DepartamentoCreateComponent } from './components/departamento/departamento-create/departamento-create.component';
+import { DepartamentoUpdateComponent } from './components/departamento/departamento-update/departamento-update.component';
+import { DepartamentoDeleteComponent } from './components/departamento/departamento-delete/departamento-delete.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { SistemaDeleteComponent } from './components/sistema/sistema-delete/sist
     LoginComponent,
     SistemaCreateComponent,
     SistemaUpdateComponent,
-    SistemaDeleteComponent
+    SistemaDeleteComponent,
+    DepartamentoListComponent,
+    DepartamentoCreateComponent,
+    DepartamentoUpdateComponent,
+    DepartamentoDeleteComponent
   ],
   imports: [
     BrowserModule,
