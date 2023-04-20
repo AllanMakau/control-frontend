@@ -2,24 +2,26 @@
 <div class="container mat-elevation-z8" >
 
     <form class="form">
-        <h1 class="fullWidth">Deletar Cargo</h1>
+        <h1 class="fullWidth">Cadastrar Tag</h1>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Nome</mat-label>
             <input 
-            [disabled]="true"
-            [(ngModel)]="cargo.nome"
+            [formControl]="nome"
+            [(ngModel)]="tag.nome"
             name="nome"
+            required
             matInput >
         </mat-form-field>
 
         <mat-form-field class="fullWidth">
             <mat-label>Descrição</mat-label>
             <textarea matInput 
-               [disabled]="true"
-               [(ngModel)]="cargo.descricao"
-               name="descricao">
-            </textarea>''
+            [formControl]="descricao"
+            [(ngModel)]="tag.descricao"
+            name="descricao"
+            required
+            placeholder="Ex. It makes me feel..."></textarea>
           </mat-form-field>
 
         <section class="section">
@@ -28,15 +30,16 @@
                 color="primary"
                 [checked]="checked"
                 [disabled]="disabled"
-                [disabled]="true"
                 name="ativo"
-                [(ngModel)]="cargo.ativo">
+                [(ngModel)]="tag.ativo">
               Ativo
             </mat-slide-toggle>
           </section>
+          
+  
 
-          <button mat-stroked-button (click)="delete()"  class="fullWidth" color="primary">Deletar</button>
-          <button mat-stroked-button routerLink="../../" class="fullWidth" color="accent">Voltar</button>
+          <button mat-stroked-button (click)="create()" [disabled]="!validaCampos()" class="fullWidth" color="primary">Cadastrar</button>
+          <button mat-stroked-button routerLink="../" class="fullWidth" color="accent">Voltar</button>
 
     </form>
 </div>

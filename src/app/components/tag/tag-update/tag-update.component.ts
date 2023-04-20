@@ -3,20 +3,20 @@ import { FormControl, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Cargo } from 'src/app/models/cargo';
-import { CargoService } from 'src/app/services/cargo.service';
+import { Tag } from 'src/app/models/tag';
+import { TagService } from 'src/app/services/tag.service';
 
 @Component({
-  selector: 'app-cargo-update',
-  templateUrl: './cargo-update.component.html',
-  styleUrls: ['./cargo-update.component.css']
+  selector: 'app-tag-update',
+  templateUrl: './tag-update.component.html',
+  styleUrls: ['./tag-update.component.css']
 })
-export class CargoUpdateComponent implements OnInit{
+export class TagUpdateComponent implements OnInit{
   color: ThemePalette = 'accent';
   checked = false;
   disabled = false;
 
-  cargo:  Cargo = {
+  tag:  Tag = {
     id:"",
     nome:"",
     descricao:"",
@@ -27,27 +27,27 @@ export class CargoUpdateComponent implements OnInit{
   descricao: FormControl = new FormControl(null,Validators.minLength(4));
 
   constructor(
-    private service:CargoService, 
+    private service:TagService, 
     private toast:ToastrService, 
     private router:Router,
     private route:ActivatedRoute
     ){}
 
   ngOnInit(): void {
-    this.cargo.id = this.route.snapshot.paramMap.get('id');
+    this.tag.id = this.route.snapshot.paramMap.get('id');
     this.findById();
   }
 
 
   findById():void{
-    this.service.findById(this.cargo.id).subscribe(response => {
-      this.cargo = response;
+    this.service.findById(this.tag.id).subscribe(response => {
+      this.tag = response;
     });
   }
   update(){
-    this.service.update(this.cargo).subscribe( () => {
-      this.toast.success("Cargo Atualizado com sucesso", "Update.")
-      this.router.navigate(['cargos'])
+    this.service.update(this.tag).subscribe( () => {
+      this.toast.success("Tag Atualizado com sucesso", "Update.")
+      this.router.navigate(['tags'])
     }, ex =>{this.toast.error})
   }
 

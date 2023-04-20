@@ -2,13 +2,13 @@
 <div class="container mat-elevation-z8" >
 
     <form class="form">
-        <h1 class="fullWidth">Deletar Cargo</h1>
+        <h1 class="fullWidth">Deletar Tag</h1>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Nome</mat-label>
             <input 
             [disabled]="true"
-            [(ngModel)]="cargo.nome"
+            [(ngModel)]="tag.nome"
             name="nome"
             matInput >
         </mat-form-field>
@@ -17,7 +17,7 @@
             <mat-label>Descrição</mat-label>
             <textarea matInput 
                [disabled]="true"
-               [(ngModel)]="cargo.descricao"
+               [(ngModel)]="tag.descricao"
                name="descricao">
             </textarea>''
           </mat-form-field>
@@ -30,7 +30,7 @@
                 [disabled]="disabled"
                 [disabled]="true"
                 name="ativo"
-                [(ngModel)]="cargo.ativo">
+                [(ngModel)]="tag.ativo">
               Ativo
             </mat-slide-toggle>
           </section>

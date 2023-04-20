@@ -3,21 +3,21 @@ import { FormControl, Validators } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Cargo } from 'src/app/models/cargo';
-import { CargoService } from 'src/app/services/cargo.service';
+import { Tag } from 'src/app/models/tag';
+import { TagService } from 'src/app/services/tag.service';
 
 @Component({
-  selector: 'app-cargo-create',
-  templateUrl: './cargo-create.component.html',
-  styleUrls: ['./cargo-create.component.css']
+  selector: 'app-tag-create',
+  templateUrl: './tag-create.component.html',
+  styleUrls: ['./tag-create.component.css']
 })
-export class CargoCreateComponent {
+export class TagCreateComponent {
 
   color: ThemePalette = 'accent';
   checked = false;
   disabled = false;
 
-  cargo:  Cargo = {
+  tag:  Tag = {
     id:"",
     nome:"",
     descricao:"",
@@ -25,21 +25,19 @@ export class CargoCreateComponent {
   }
 
   nome: FormControl = new FormControl(null,Validators.minLength(4));
-  abreviacao: FormControl = new FormControl(null,Validators.minLength(4));
   descricao: FormControl = new FormControl(null,Validators.minLength(4));
 
-  constructor(private service:CargoService, private toast:ToastrService, private router:Router){}
+  constructor(private service:TagService, private toast:ToastrService, private router:Router){}
 
   create(){
-    this.service.create(this.cargo).subscribe( () => {
-      this.toast.success("Cargo cadastrado com sucesso", "Sucesso.")
-      this.router.navigate(['cargo'])
+    this.service.create(this.tag).subscribe( () => {
+      this.toast.success("Tag cadastrado com sucesso", "Sucesso.")
+      this.router.navigate(['tag'])
     }, ex =>{this.toast.error})
   }
 
   validaCampos():boolean{
     return this.nome.valid 
-    && this.abreviacao.valid 
     && this.descricao.valid;
   }
 }

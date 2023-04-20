@@ -1,0 +1,25 @@
+.container {
+    width: 25rem;
+    margin: auto;
+    padding: 1rem 1rem 3rem 1rem;
+    border-radius: .6rem;
+
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+}
+
+section{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fullWidth{
+    width: 100%;
+}
+button{
+    margin-bottom: 1rem;
+}

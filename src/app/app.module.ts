@@ -47,6 +47,10 @@ import { CargoListComponent } from './components/cargo/cargo-list/cargo-list.com
 import { CargoCreateComponent } from './components/cargo/cargo-create/cargo-create.component';
 import { CargoUpdateComponent } from './components/cargo/cargo-update/cargo-update.component';
 import { CargoDeleteComponent } from './components/cargo/cargo-delete/cargo-delete.component';
+import { TagListComponent } from './components/tag/tag-list/tag-list.component';
+import { TagCreateComponent } from './components/tag/tag-create/tag-create.component';
+import { TagUpdateComponent } from './components/tag/tag-update/tag-update.component';
+import { TagDeleteComponent } from './components/tag/tag-delete/tag-delete.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import { CargoDeleteComponent } from './components/cargo/cargo-delete/cargo-dele
     CargoListComponent,
     CargoCreateComponent,
     CargoUpdateComponent,
-    CargoDeleteComponent
+    CargoDeleteComponent,
+    TagListComponent,
+    TagCreateComponent,
+    TagUpdateComponent,
+    TagDeleteComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,10 @@ import { SistemaCreateComponent } from './components/sistema/sistema-create/sist
 import { SistemaDeleteComponent } from './components/sistema/sistema-delete/sistema-delete.component';
 import { SistemaListComponent } from './components/sistema/sistema-list/sistema-list.component';
 import { SistemaUpdateComponent } from './components/sistema/sistema-update/sistema-update.component';
+import { TagCreateComponent } from './components/tag/tag-create/tag-create.component';
+import { TagDeleteComponent } from './components/tag/tag-delete/tag-delete.component';
+import { TagListComponent } from './components/tag/tag-list/tag-list.component';
+import { TagUpdateComponent } from './components/tag/tag-update/tag-update.component';
 
 const routes: Routes = [
   { 
@@ -37,7 +41,12 @@ const routes: Routes = [
       {path : 'cargo', component : CargoListComponent},
       {path : 'cargo/novo', component : CargoCreateComponent},
       {path : 'cargo/update/:id', component : CargoUpdateComponent},
-      {path : 'cargo/delete/:id', component : CargoDeleteComponent}
+      {path : 'cargo/delete/:id', component : CargoDeleteComponent},
+
+      {path : 'tag', component : TagListComponent},
+      {path : 'tag/novo', component : TagCreateComponent},
+      {path : 'tag/update/:id', component : TagUpdateComponent},
+      {path : 'tag/delete/:id', component : TagDeleteComponent}
     ]
   }
 ];
