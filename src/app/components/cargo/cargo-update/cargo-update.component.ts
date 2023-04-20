@@ -47,7 +47,7 @@ export class CargoUpdateComponent implements OnInit{
   update(){
     this.service.update(this.cargo).subscribe( () => {
       this.toast.success("Cargo Atualizado com sucesso", "Update.")
-      this.router.navigate(['cargos'])
+      this.router.navigate(['cargo'])
     }, ex =>{this.toast.error})
   }
 

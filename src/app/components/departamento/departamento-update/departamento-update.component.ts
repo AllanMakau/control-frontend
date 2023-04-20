@@ -47,7 +47,7 @@ export class DepartamentoUpdateComponent implements OnInit{
   update(){
     this.service.update(this.departamento).subscribe( () => {
       this.toast.success("Departamento Atualizado com sucesso", "Update.")
-      this.router.navigate(['departamento'])
+      this.router.navigate(['departamentos'])
     }, ex =>{this.toast.error})
   }
 

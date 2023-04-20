@@ -43,7 +43,7 @@ export class DepartamentoDeleteComponent implements OnInit{
   delete(){
     this.service.delete(this.departamento.id).subscribe( () => {
       this.toast.success("Departamento deletado com sucesso", "Delete.")
-      this.router.navigate(['departamento'])
+      this.router.navigate(['departamentos'])
     }, ex =>{this.toast.error(ex.error.detail)})
   }
 

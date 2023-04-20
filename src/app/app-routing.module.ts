@@ -33,20 +33,20 @@ const routes: Routes = [
       {path : 'sistemas/update/:id', component : SistemaUpdateComponent},
       {path : 'sistemas/delete/:id', component : SistemaDeleteComponent},
 
-      {path : 'departamento', component : DepartamentoListComponent},
-      {path : 'departamento/novo', component : DepartamentoCreateComponent},
-      {path : 'departamento/update/:id', component : DepartamentoUpdateComponent},
-      {path : 'departamento/delete/:id', component : DepartamentoDeleteComponent},
+      {path : 'departamentos', component : DepartamentoListComponent},
+      {path : 'departamentos/novo', component : DepartamentoCreateComponent},
+      {path : 'departamentos/update/:id', component : DepartamentoUpdateComponent},
+      {path : 'departamentos/delete/:id', component : DepartamentoDeleteComponent},
 
-      {path : 'cargo', component : CargoListComponent},
-      {path : 'cargo/novo', component : CargoCreateComponent},
-      {path : 'cargo/update/:id', component : CargoUpdateComponent},
-      {path : 'cargo/delete/:id', component : CargoDeleteComponent},
+      {path : 'cargos', component : CargoListComponent},
+      {path : 'cargos/novo', component : CargoCreateComponent},
+      {path : 'cargos/update/:id', component : CargoUpdateComponent},
+      {path : 'cargos/delete/:id', component : CargoDeleteComponent},
 
-      {path : 'tag', component : TagListComponent},
-      {path : 'tag/novo', component : TagCreateComponent},
-      {path : 'tag/update/:id', component : TagUpdateComponent},
-      {path : 'tag/delete/:id', component : TagDeleteComponent}
+      {path : 'tags', component : TagListComponent},
+      {path : 'tags/novo', component : TagCreateComponent},
+      {path : 'tags/update/:id', component : TagUpdateComponent},
+      {path : 'tags/delete/:id', component : TagDeleteComponent}
     ]
   }
 ];

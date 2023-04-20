@@ -32,7 +32,7 @@ export class TagCreateComponent {
   create(){
     this.service.create(this.tag).subscribe( () => {
       this.toast.success("Tag cadastrado com sucesso", "Sucesso.")
-      this.router.navigate(['tag'])
+      this.router.navigate(['tags'])
     }, ex =>{this.toast.error})
   }
 

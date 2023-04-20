@@ -43,7 +43,7 @@ export class TagDeleteComponent implements OnInit{
   delete(){
     this.service.delete(this.tag.id).subscribe( () => {
       this.toast.success("Tag deletado com sucesso", "Delete.")
-      this.router.navigate(['tag'])
+      this.router.navigate(['tags'])
     }, ex =>{this.toast.error(ex.error.detail)})
   }
 

@@ -34,7 +34,7 @@ export class DepartamentoCreateComponent {
   create(){
     this.service.create(this.departamento).subscribe( () => {
       this.toast.success("Departamento cadastrado com sucesso", "Sucesso.")
-      this.router.navigate(['departamento'])
+      this.router.navigate(['departamentos'])
     }, ex =>{this.toast.error})
   }
 
