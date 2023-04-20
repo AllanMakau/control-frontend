@@ -86,7 +86,7 @@ import { DepartamentoDeleteComponent } from './components/departamento/departame
     MatCardModule,
     MatSlideToggleModule,
     ToastrModule.forRoot({
-      timeOut:4000,
+      timeOut:2000,
       closeButton:true,
       progressBar:true
     }),
