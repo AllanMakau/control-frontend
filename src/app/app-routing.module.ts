@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { CargoCreateComponent } from './components/cargo/cargo-create/cargo-create.component';
+import { CargoDeleteComponent } from './components/cargo/cargo-delete/cargo-delete.component';
+import { CargoListComponent } from './components/cargo/cargo-list/cargo-list.component';
+import { CargoUpdateComponent } from './components/cargo/cargo-update/cargo-update.component';
 import { DepartamentoCreateComponent } from './components/departamento/departamento-create/departamento-create.component';
 import { DepartamentoDeleteComponent } from './components/departamento/departamento-delete/departamento-delete.component';
 import { DepartamentoListComponent } from './components/departamento/departamento-list/departamento-list.component';
@@ -28,7 +32,12 @@ const routes: Routes = [
       {path : 'departamento', component : DepartamentoListComponent},
       {path : 'departamento/novo', component : DepartamentoCreateComponent},
       {path : 'departamento/update/:id', component : DepartamentoUpdateComponent},
-      {path : 'departamento/delete/:id', component : DepartamentoDeleteComponent}
+      {path : 'departamento/delete/:id', component : DepartamentoDeleteComponent},
+
+      {path : 'cargo', component : CargoListComponent},
+      {path : 'cargo/novo', component : CargoCreateComponent},
+      {path : 'cargo/update/:id', component : CargoUpdateComponent},
+      {path : 'cargo/delete/:id', component : CargoDeleteComponent}
     ]
   }
 ];

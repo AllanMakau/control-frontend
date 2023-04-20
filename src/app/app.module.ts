@@ -43,6 +43,10 @@ import { DepartamentoListComponent } from './components/departamento/departament
 import { DepartamentoCreateComponent } from './components/departamento/departamento-create/departamento-create.component';
 import { DepartamentoUpdateComponent } from './components/departamento/departamento-update/departamento-update.component';
 import { DepartamentoDeleteComponent } from './components/departamento/departamento-delete/departamento-delete.component';
+import { CargoListComponent } from './components/cargo/cargo-list/cargo-list.component';
+import { CargoCreateComponent } from './components/cargo/cargo-create/cargo-create.component';
+import { CargoUpdateComponent } from './components/cargo/cargo-update/cargo-update.component';
+import { CargoDeleteComponent } from './components/cargo/cargo-delete/cargo-delete.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,11 @@ import { DepartamentoDeleteComponent } from './components/departamento/departame
     DepartamentoListComponent,
     DepartamentoCreateComponent,
     DepartamentoUpdateComponent,
-    DepartamentoDeleteComponent
+    DepartamentoDeleteComponent,
+    CargoListComponent,
+    CargoCreateComponent,
+    CargoUpdateComponent,
+    CargoDeleteComponent
   ],
   imports: [
     BrowserModule,
