@@ -1,0 +1,42 @@
+
+<div class="container mat-elevation-z8" >
+
+    <form class="form">
+        <h1 class="fullWidth">Deletar Tag</h1>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input 
+            [disabled]="true"
+            [(ngModel)]="perfil.nome"
+            name="nome"
+            matInput >
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput 
+               [disabled]="true"
+               [(ngModel)]="perfil.descricao"
+               name="descricao">
+            </textarea>''
+          </mat-form-field>
+
+        <section class="section">
+            <mat-slide-toggle
+                class="margin"
+                color="primary"
+                [checked]="checked"
+                [disabled]="disabled"
+                [disabled]="true"
+                name="ativo"
+                [(ngModel)]="perfil.ativo">
+              Ativo
+            </mat-slide-toggle>
+          </section>
+
+          <button mat-stroked-button (click)="delete()"  class="fullWidth" color="primary">Deletar</button>
+          <button mat-stroked-button routerLink="../../" class="fullWidth" color="accent">Voltar</button>
+
+    </form>
+</div>

@@ -12,6 +12,10 @@ import { DepartamentoUpdateComponent } from './components/departamento/departame
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
+import { PerfilCreateComponent } from './components/perfil/perfil-create/perfil-create.component';
+import { PerfilDeleteComponent } from './components/perfil/perfil-delete/perfil-delete.component';
+import { PerfilListComponent } from './components/perfil/perfil-list/perfil-list.component';
+import { PerfilUpdateComponent } from './components/perfil/perfil-update/perfil-update.component';
 import { SistemaCreateComponent } from './components/sistema/sistema-create/sistema-create.component';
 import { SistemaDeleteComponent } from './components/sistema/sistema-delete/sistema-delete.component';
 import { SistemaListComponent } from './components/sistema/sistema-list/sistema-list.component';
@@ -28,6 +32,7 @@ const routes: Routes = [
     path: '',
     component: NavComponent, canActivate: [AuthGuard], children : [
       {path : 'home', component : HomeComponent},
+      
       {path : 'sistemas', component : SistemaListComponent},
       {path : 'sistemas/novo', component : SistemaCreateComponent},
       {path : 'sistemas/update/:id', component : SistemaUpdateComponent},
@@ -46,7 +51,12 @@ const routes: Routes = [
       {path : 'tags', component : TagListComponent},
       {path : 'tags/novo', component : TagCreateComponent},
       {path : 'tags/update/:id', component : TagUpdateComponent},
-      {path : 'tags/delete/:id', component : TagDeleteComponent}
+      {path : 'tags/delete/:id', component : TagDeleteComponent},
+
+      {path : 'perfis', component : PerfilListComponent},
+      {path : 'perfis/novo', component : PerfilCreateComponent},
+      {path : 'perfis/update/:id', component : PerfilUpdateComponent},
+      {path : 'perfis/delete/:id', component : PerfilDeleteComponent}
     ]
   }
 ];

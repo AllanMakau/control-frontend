@@ -51,6 +51,10 @@ import { TagListComponent } from './components/tag/tag-list/tag-list.component';
 import { TagCreateComponent } from './components/tag/tag-create/tag-create.component';
 import { TagUpdateComponent } from './components/tag/tag-update/tag-update.component';
 import { TagDeleteComponent } from './components/tag/tag-delete/tag-delete.component';
+import { PerfilListComponent } from './components/perfil/perfil-list/perfil-list.component';
+import { PerfilCreateComponent } from './components/perfil/perfil-create/perfil-create.component';
+import { PerfilUpdateComponent } from './components/perfil/perfil-update/perfil-update.component';
+import { PerfilDeleteComponent } from './components/perfil/perfil-delete/perfil-delete.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +78,11 @@ import { TagDeleteComponent } from './components/tag/tag-delete/tag-delete.compo
     TagListComponent,
     TagCreateComponent,
     TagUpdateComponent,
-    TagDeleteComponent
+    TagDeleteComponent,
+    PerfilListComponent,
+    PerfilCreateComponent,
+    PerfilUpdateComponent,
+    PerfilDeleteComponent
   ],
   imports: [
     BrowserModule,
