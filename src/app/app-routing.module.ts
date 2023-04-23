@@ -25,6 +25,7 @@ import { TagCreateComponent } from './components/tag/tag-create/tag-create.compo
 import { TagDeleteComponent } from './components/tag/tag-delete/tag-delete.component';
 import { TagListComponent } from './components/tag/tag-list/tag-list.component';
 import { TagUpdateComponent } from './components/tag/tag-update/tag-update.component';
+import { UsuarioListComponent } from './components/usuario/usuario-list/usuario-list.component';
 
 const routes: Routes = [
   { 
@@ -58,7 +59,9 @@ const routes: Routes = [
       {path : 'perfis/:id/add-tag', component : AddTagComponent},
       {path : 'perfis/novo', component : PerfilCreateComponent},
       {path : 'perfis/update/:id', component : PerfilUpdateComponent},
-      {path : 'perfis/delete/:id', component : PerfilDeleteComponent}
+      {path : 'perfis/delete/:id', component : PerfilDeleteComponent},
+
+      {path : 'users', component : UsuarioListComponent},
     ]
   }
 ];

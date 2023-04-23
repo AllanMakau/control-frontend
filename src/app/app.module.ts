@@ -57,6 +57,7 @@ import { PerfilCreateComponent } from './components/perfil/perfil-create/perfil-
 import { PerfilUpdateComponent } from './components/perfil/perfil-update/perfil-update.component';
 import { PerfilDeleteComponent } from './components/perfil/perfil-delete/perfil-delete.component';
 import { AddTagComponent } from './components/perfil/add-tag/add-tag.component';
+import { UsuarioListComponent } from './components/usuario/usuario-list/usuario-list.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { AddTagComponent } from './components/perfil/add-tag/add-tag.component';
     PerfilCreateComponent,
     PerfilUpdateComponent,
     PerfilDeleteComponent,
-    AddTagComponent
+    AddTagComponent,
+    UsuarioListComponent
 
   ],
   imports: [
