@@ -28,6 +28,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from './components/nav/nav.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -55,6 +56,7 @@ import { PerfilListComponent } from './components/perfil/perfil-list/perfil-list
 import { PerfilCreateComponent } from './components/perfil/perfil-create/perfil-create.component';
 import { PerfilUpdateComponent } from './components/perfil/perfil-update/perfil-update.component';
 import { PerfilDeleteComponent } from './components/perfil/perfil-delete/perfil-delete.component';
+import { AddTagComponent } from './components/perfil/add-tag/add-tag.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import { PerfilDeleteComponent } from './components/perfil/perfil-delete/perfil-
     PerfilListComponent,
     PerfilCreateComponent,
     PerfilUpdateComponent,
-    PerfilDeleteComponent
+    PerfilDeleteComponent,
+    AddTagComponent
+
   ],
   imports: [
     BrowserModule,
@@ -109,6 +113,7 @@ import { PerfilDeleteComponent } from './components/perfil/perfil-delete/perfil-
     MatListModule,
     MatCardModule,
     MatSlideToggleModule,
+    MatGridListModule,
     ToastrModule.forRoot({
       timeOut:2000,
       closeButton:true,

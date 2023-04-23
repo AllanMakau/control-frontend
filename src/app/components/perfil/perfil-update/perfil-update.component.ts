@@ -22,7 +22,6 @@ export class PerfilUpdateComponent implements OnInit {
     descricao: "",
     tag_list: [],
     ativo: true
-
   }
 
   nome: FormControl = new FormControl(null,Validators.minLength(4));

@@ -12,6 +12,7 @@ import { DepartamentoUpdateComponent } from './components/departamento/departame
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
+import { AddTagComponent } from './components/perfil/add-tag/add-tag.component';
 import { PerfilCreateComponent } from './components/perfil/perfil-create/perfil-create.component';
 import { PerfilDeleteComponent } from './components/perfil/perfil-delete/perfil-delete.component';
 import { PerfilListComponent } from './components/perfil/perfil-list/perfil-list.component';
@@ -54,6 +55,7 @@ const routes: Routes = [
       {path : 'tags/delete/:id', component : TagDeleteComponent},
 
       {path : 'perfis', component : PerfilListComponent},
+      {path : 'perfis/:id/add-tag', component : AddTagComponent},
       {path : 'perfis/novo', component : PerfilCreateComponent},
       {path : 'perfis/update/:id', component : PerfilUpdateComponent},
       {path : 'perfis/delete/:id', component : PerfilDeleteComponent}

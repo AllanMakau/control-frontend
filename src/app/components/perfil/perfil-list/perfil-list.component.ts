@@ -31,12 +31,10 @@ export class PerfilListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-
   findAll(){
     this.service.findAll().subscribe(
       resposta => { 
         this.ELEMENT_DATA = resposta 
-        console.log(this.ELEMENT_DATA)
         this.dataSource = new MatTableDataSource<Perfil>(resposta);
         this.dataSource.paginator = this.paginator;
     })
