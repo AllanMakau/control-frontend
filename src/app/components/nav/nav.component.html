@@ -1,12 +1,13 @@
+
 <mat-drawer-container class="container" autosize>
-    <mat-drawer #drawer class="sidenav" mode="side" opened="true">
-        <img src="assets/img/side-image.svg" alt="imagem de navegação">
+    <mat-drawer  class="sidenav" mode="side" [opened]="sideBarOpen">
+         <img src="assets/img/side-image.svg" alt="imagem de navegação"> 
         <mat-nav-list class="nav-list">
             <a mat-list-item routerLink="home">
                 <i class="material-icons">home</i>
                 Home
              </a>
-             <a mat-list-item routerLink="tecnicos">
+             <a mat-list-item routerLink="usuarios">
                 <i class="material-icons">account_circle</i>
                 Usuários
              </a>
@@ -40,13 +41,14 @@
     </mat-drawer>
   
     <div class="sidenav-content">
-        <app-header></app-header>
-      <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
-        <mat-icon>
-            menu
-        </mat-icon>
-      </button>
+        <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+        <div *ngIf="spinner.isLoading | async" class="loader-container">
+            <mat-spinner style="top: 50%; left :50%;" ></mat-spinner>
+        </div>
+        
       <router-outlet></router-outlet>
     </div>
   
   </mat-drawer-container>
+
+

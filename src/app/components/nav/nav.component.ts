@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { MatDrawer } from '@angular/material/sidenav';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,12 +12,19 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavComponent implements OnInit {
   
-  constructor(private router: Router, private authService: AuthService, private toast: ToastrService){ }
 
+  sideBarOpen =true;
+  constructor(private router: Router, private authService: AuthService, private toast: ToastrService, public spinner:SpinnerService){ }
 
   ngOnInit(): void {
-    this.router.navigate(['users']);
+
   }
+
+  sideBarToggler(){
+    console.log('executei apartir do nav')
+    this.sideBarOpen =!this.sideBarOpen;
+  }
+
   logout(){
     this.router.navigate([ 'login' ])
     this.authService.logout();

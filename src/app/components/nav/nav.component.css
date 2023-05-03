@@ -27,3 +27,12 @@ img {
     color: white;
     background: linear-gradient(180deg, rgb(38, 13, 41) 0%, rgb(98, 6, 121) 0%, rgb(189, 14, 233) 100%);
  }
+
+.loader-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.7;
+    z-index: 99;
+}

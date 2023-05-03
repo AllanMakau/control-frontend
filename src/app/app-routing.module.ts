@@ -25,7 +25,10 @@ import { TagCreateComponent } from './components/tag/tag-create/tag-create.compo
 import { TagDeleteComponent } from './components/tag/tag-delete/tag-delete.component';
 import { TagListComponent } from './components/tag/tag-list/tag-list.component';
 import { TagUpdateComponent } from './components/tag/tag-update/tag-update.component';
+import { UsuarioCreateComponent } from './components/usuario/usuario-create/usuario-create.component';
 import { UsuarioListComponent } from './components/usuario/usuario-list/usuario-list.component';
+import { UsuarioPerfilAddComponent } from './components/usuario/usuario-perfil-add/usuario-perfil-add.component';
+import { UsuarioUpdateComponent } from './components/usuario/usuario-update/usuario-update.component';
 
 const routes: Routes = [
   { 
@@ -33,6 +36,7 @@ const routes: Routes = [
   { 
     path: '',
     component: NavComponent, canActivate: [AuthGuard], children : [
+      
       {path : 'home', component : HomeComponent},
       
       {path : 'sistemas', component : SistemaListComponent},
@@ -61,7 +65,11 @@ const routes: Routes = [
       {path : 'perfis/update/:id', component : PerfilUpdateComponent},
       {path : 'perfis/delete/:id', component : PerfilDeleteComponent},
 
-      {path : 'users', component : UsuarioListComponent},
+      {path : 'usuarios', component : UsuarioListComponent},
+      {path : 'usuarios/:id/add-perfil', component : UsuarioPerfilAddComponent},
+      {path : 'usuarios/novo', component : UsuarioCreateComponent},
+      {path : 'usuarios/update/:id', component : UsuarioUpdateComponent},
+      {path: '**', redirectTo: '/home'},
     ]
   }
 ];

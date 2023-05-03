@@ -1,0 +1,112 @@
+
+<div class="container mat-elevation-z8" >
+
+    <form class="form">
+        <h1 class="fullWidth">Atualizar Usuário</h1>
+
+        <div class="row">
+            <mat-form-field class="fullWidth" appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput   
+                [formControl]="nome"
+                [(ngModel)]="user.nome"
+                name="nome"
+                required>
+            </mat-form-field>
+
+            <mat-form-field class="fullWidth" appearance="fill">
+                <mat-label>Sobrenome</mat-label>
+                <input matInput  
+                [formControl]="sobrenome"
+                [(ngModel)]="user.sobrenome"
+                name="sobrenome"
+                required>
+            </mat-form-field>
+
+            <mat-form-field class="fullWidth" appearance="fill">
+                <mat-label>Apelido</mat-label>
+                <input matInput  
+                [formControl]="apelido"
+                [(ngModel)]="user.apelido"
+                name="apelido"
+                required>
+            </mat-form-field>
+        </div>
+
+
+        <div class="row">
+            <mat-form-field class="fullWidth" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput   
+                [formControl]="email"
+                [(ngModel)]="user.email"
+                name="email"
+                required>
+            </mat-form-field>
+
+            <mat-form-field class="fullWidth" appearance="fill">
+                <mat-label>CPF</mat-label>
+                <input matInput  
+                [formControl]="cpf"
+                [(ngModel)]="user.cpf"
+                name="cpf"
+                required>
+            </mat-form-field>
+
+            <mat-form-field class="fullWidth" appearance="fill">
+                <mat-label>RG</mat-label>
+                <input matInput  
+                [formControl]="registro"
+                [(ngModel)]="user.registro"
+                name="registro"
+                required>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="fullWidth" appearance="fill">
+                <mat-label>usuario</mat-label>
+                <input matInput  
+                [formControl]="usuario"
+                [(ngModel)]="user.usuario"
+                name="usuario"
+                required>
+            </mat-form-field>
+
+            <mat-form-field class="fullWidth" appearance="fill">
+                <mat-label>Data de nascimento</mat-label>
+                <input matInput [matDatepicker]="picker" 
+                [(ngModel)]="user.data_aniversario"
+                name="data_aniversario" >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+        </div>
+
+        <div class="row">
+
+            <mat-form-field class="fullWidth"  appearance="fill">
+               <mat-label>{{user.cargo.nome}}</mat-label>
+                <mat-select [(ngModel)]="user.cargo" name="cargo">
+                <mat-option *ngFor="let cargo of cargos" [value]="cargo">
+                    {{cargo.descricao}}
+                </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="fullWidth"  appearance="fill">
+                <mat-label>{{user.departamento.nome}}</mat-label>
+                    <mat-select [(ngModel)]="user.departamento" name="dpt">
+                    <mat-option *ngFor="let dpt of depts" [value]="dpt">
+                        {{dpt.descricao}}
+                    </mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </div>
+          <button mat-stroked-button class="fullWidth" (click)="update()" [disabled]="!validaCampos()" color="primary">Cadastrar</button>
+          <button mat-stroked-button routerLink="../../" class="fullWidth" color="accent">Voltar</button>
+
+    </form>
+</div>

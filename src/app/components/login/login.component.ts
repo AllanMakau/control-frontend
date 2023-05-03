@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { ErrorDefault } from 'src/app/models/error';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,10 @@ import { ErrorDefault } from 'src/app/models/error';
 })
 export class LoginComponent implements OnInit{
 
-constructor(private toast: ToastrService, private auth: AuthService, private router:Router){}
+constructor(private toast: ToastrService, 
+            private auth: AuthService, 
+             private router:Router
+             , private spinner: SpinnerService){}
 
 creds: Credenciais = {
   username:'',
@@ -34,12 +38,14 @@ errorDefault: ErrorDefault;
   }
 
   logar(){
+    this.spinner.show();
     this.auth.autenticate(this.creds).subscribe(response => {
       this.auth.sucessfulLogin(response.headers.get('Authorization').substring(7));
       this.router.navigate(['sistemas'])
     }, ex => {
       this.toast.error(ex.error)
     })
+    this.spinner.hide();
   }
 
 }

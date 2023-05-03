@@ -1,3 +1,7 @@
+import { Cargo } from "./cargo";
+import { Departamento } from "./departamento";
+import { Perfil } from "./perfil";
+
 export interface Usuario{
 
     id?: any;
@@ -10,5 +14,8 @@ export interface Usuario{
     usuario:string;
     senha:string;
     data_aniversario:string;
+    cargo?:Cargo;
+    departamento?:Departamento;
+    perfis: Perfil[] ,
     ativo:boolean;
 }

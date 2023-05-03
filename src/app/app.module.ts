@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {MatNativeDateModule} from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 // Para realizar requisições HTTP
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Imports para componentes do Angular Material
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from './components/nav/nav.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -58,6 +60,12 @@ import { PerfilUpdateComponent } from './components/perfil/perfil-update/perfil-
 import { PerfilDeleteComponent } from './components/perfil/perfil-delete/perfil-delete.component';
 import { AddTagComponent } from './components/perfil/add-tag/add-tag.component';
 import { UsuarioListComponent } from './components/usuario/usuario-list/usuario-list.component';
+import { UsuarioCreateComponent } from './components/usuario/usuario-create/usuario-create.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { UsuarioUpdateComponent } from './components/usuario/usuario-update/usuario-update.component';
+import { UsuarioPerfilAddComponent } from './components/usuario/usuario-perfil-add/usuario-perfil-add.component';
+import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+import { SpinnerInterceptorService } from './interceptors/spinner-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -87,7 +95,12 @@ import { UsuarioListComponent } from './components/usuario/usuario-list/usuario-
     PerfilUpdateComponent,
     PerfilDeleteComponent,
     AddTagComponent,
-    UsuarioListComponent
+    UsuarioListComponent,
+    UsuarioCreateComponent,
+    UsuarioUpdateComponent,
+    UsuarioPerfilAddComponent,
+    SpinnerComponent,
+    
 
   ],
   imports: [
@@ -116,6 +129,9 @@ import { UsuarioListComponent } from './components/usuario/usuario-list/usuario-
     MatCardModule,
     MatSlideToggleModule,
     MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatProgressSpinnerModule,
     ToastrModule.forRoot({
       timeOut:2000,
       closeButton:true,
@@ -124,7 +140,10 @@ import { UsuarioListComponent } from './components/usuario/usuario-list/usuario-
     
 
   ],
-  providers: [AuthInterceptorProvider],
+
+  providers: [
+    {provide:  HTTP_INTERCEPTORS, useClass: SpinnerInterceptorService,  multi: true},
+    AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

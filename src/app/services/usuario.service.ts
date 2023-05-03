@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 import { API_CONFIG } from '../config/api.config';
 import { Usuario } from '../models/usuario';
 
@@ -13,7 +13,7 @@ export class UsuarioService {
 
 
   findById(id:any):Observable<Usuario>{
-    return  this.http.get<Usuario>(`${API_CONFIG.baseUrl}/users/${id}`)
+    return  this.http.get<Usuario>(`${API_CONFIG.baseUrl}/users/${id}`);
   }
   findAll(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(`${API_CONFIG.baseUrl}/users`);
@@ -29,6 +29,14 @@ export class UsuarioService {
 
   delete(id:any):Observable<Usuario>{
     return  this.http.delete<Usuario>(`${API_CONFIG.baseUrl}/users/${id}`)
+  }
+
+  addPerfil(usuario: Usuario,perfil):Observable<Usuario>  {
+    return this.http.put<Usuario>(`${API_CONFIG.baseUrl}/users/${usuario.id}/add-function`,perfil);
+  }
+
+  removerPerfil(usuario: Usuario,perfil):Observable<Usuario>  {
+    return this.http.put<Usuario>(`${API_CONFIG.baseUrl}/users/${usuario.id}/remove-function`,perfil);
   }
 }
 
