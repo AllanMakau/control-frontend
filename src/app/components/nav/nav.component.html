@@ -1,8 +1,8 @@
 
 <mat-drawer-container class="container" autosize>
-    <mat-drawer  class="sidenav" mode="side" [opened]="sideBarOpen">
+    <mat-drawer  class="sidenav" mode="side" [opened]="sideBarOpen" >
          <img src="assets/img/side-image.svg" alt="imagem de navegação"> 
-        <mat-nav-list class="nav-list">
+        <mat-nav-list class="nav-list"  >
             <a mat-list-item routerLink="home">
                 <i class="material-icons">home</i>
                 Home
@@ -12,24 +12,24 @@
                 Usuários
              </a>
              <a mat-list-item routerLink="perfis">
-                <i class="material-icons">person</i>
+                <i class="material-icons">settings</i>
                 Perfis
              </a>
              <a mat-list-item routerLink="sistemas">
-                <i class="material-icons">support</i>
+                <i class="material-icons">computer</i>
                 Sistemas
              </a>
             <a mat-list-item routerLink="departamentos">
-                <i class="material-icons" >code</i>
+                <i class="material-icons" >groups</i>
                 Departamentos
             </a>
 
             <a mat-list-item routerLink="cargos">
-                <i class="material-icons" >code</i>
+                <i class="material-icons" >shield</i>
                 Cargos
             </a>
             <a mat-list-item routerLink="tags">
-                <i class="material-icons" >code</i>
+                <i class="material-icons" >new_label</i>
                 Tags
             </a>
             <a mat-list-item (click)="logout()">

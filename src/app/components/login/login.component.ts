@@ -41,7 +41,7 @@ errorDefault: ErrorDefault;
     this.spinner.show();
     this.auth.autenticate(this.creds).subscribe(response => {
       this.auth.sucessfulLogin(response.headers.get('Authorization').substring(7));
-      this.router.navigate(['sistemas'])
+      this.router.navigate(['home'])
     }, ex => {
       this.toast.error(ex.error)
     })
